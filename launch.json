@@ -1,0 +1,37 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch veteran-confirmation",
+            "request": "launch",
+            "mainClass": "gov.va.api.lighthouse.veteranconfirmation.service.Application",
+            "projectName": "veteran-confirmation",
+            "args": 
+            [
+                "--mpi.ssl-enabled=false",
+                "--mpi.url=http://localhost:9090/psim_webservice/IdMWebService",
+                "--mpi.wsdl-location=http://localhost:9090/psim_webservice/IdMWebService/idmWebService.wsdl",
+                "--mpi.user-id=TEST",
+                "--mpi.integration-process-id=200TESTE",
+                "--mpi.as-agent-id=200TESTG",
+                "--emis.ssl.enabled=false",
+                "--emis.veteran-status-service-v1.url=http://localhost:9123/VIERSService/eMIS/v1/VeteranStatusService",
+                "--emis.veteran-status-service-v1.wsdl=http://localhost:9123/VIERSService/eMIS/v1/VeteranStatusService/eMISVeteranStatusService.wsdl",
+                "--loader=gov.va.api.lighthouse.veteranverification.service.Application",
+                "--logging.level.root=INFO",
+                "--spring.config.additional-location=classpath:/application.properties,optional:file:${project.basedir}/config/secrets.properties",
+                "org.springframework.boot.loader.PropertiesLauncher"
+            ],      
+        }
+    ]
+}
