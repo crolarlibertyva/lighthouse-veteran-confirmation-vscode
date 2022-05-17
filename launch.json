@@ -29,7 +29,7 @@
                 "--emis.veteran-status-service-v1.wsdl=http://localhost:9123/VIERSService/eMIS/v1/VeteranStatusService/eMISVeteranStatusService.wsdl",
                 "--loader=gov.va.api.lighthouse.veteranverification.service.Application",
                 "--logging.level.root=INFO",
-                "--spring.config.additional-location=classpath:/application.properties,optional:file:${project.basedir}/config/secrets.properties",
+                "--spring.config.additional-location=classpath:/application.properties,classpath:/application-dev.properties,optional:file:${project.basedir}/config/secrets.properties",
                 "org.springframework.boot.loader.PropertiesLauncher"
             ],      
         }
